@@ -9,6 +9,8 @@ namespace Utils
 
         public static WaitForSeconds WaitForSeconds(float seconds)
         {
+            if(cache == null) cache = new Dictionary<float, WaitForSeconds>();
+
             if(cache.ContainsKey(seconds)) return cache[seconds];
             else
             {
